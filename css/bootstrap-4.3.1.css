@@ -5096,8 +5096,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background: rgb(36,0,36);
-background: linear-gradient(90deg, rgba(36,0,36,1) 0%, rgba(177,11,140,1) 35%, rgba(255,0,211,1) 100%);
+  background: rgb(119,0,119);
+  background: linear-gradient(140deg, rgba(119,0,119,1) 0%, rgba(177,11,140,1) 30%, rgba(255,0,211,1) 100%);
   border-radius: 0.3rem;
 }
 
