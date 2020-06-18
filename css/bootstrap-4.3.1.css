@@ -4629,7 +4629,8 @@ input[type="button"].btn-block {
 .card-footer {
   padding: 2rem 1rem;
   margin-top: 2rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  background: rgb(210,210,210);
+  background: linear-gradient(145deg, rgba(210,210,210,1) 0%, rgba(143,143,143,1) 30%, rgba(232,232,232,1) 100%);
   margin-left: auto;
   margin-right: auto;
   padding: 0.75rem 1.25rem;
