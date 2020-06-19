@@ -32,11 +32,13 @@
       <div class="row">
 		    <div class="col-xl-4"></div>
 	    <div class="col-xl-4">
-				<form name="Connect With Me" netlify>
+				<form name="Connect With Me" method="POST" data-netlify-recaptcha="true" data-netlify="true" netlify>
     <label>Name <input type="text" name="name" /></label><p></p>
     <label>Email <input type="email" name="email" /></label><p></p>
+	<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
 	<label>Telephone <input type="tel" name="phone"></label><p></p>
-    <label>Comment <input type="text" name="comment"></label><p></p>
+    <label>Message: <textarea name="message"></textarea></label><p></p>
+					 <div data-netlify-recaptcha="true"></div><p></p>
  	   <button type="submit">Send</button>
 </form>
 		  </div>
