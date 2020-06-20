@@ -89,6 +89,17 @@ p {
   margin-bottom: 1rem;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: #ff2eae;
+  background: white;
+}
+
+::selection {
+  color: #ff2eae;
+  background: white;
+}
+
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
