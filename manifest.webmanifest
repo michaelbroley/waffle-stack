@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "MichaelBroley's CV",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "Michael Broley",
+  "short_name": "MB.COM",
+  "start_url": "/index.html"
+}
