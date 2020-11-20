@@ -1,15 +1,21 @@
 {
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "description": "MichaelBroley's CV",
-  "display": "standalone",
+  "short_name": "MichaelBroley.com",
+  "name": "MichaelBroley.com",
+  "description": "The CV of Michael Broley",
   "icons": [
     {
-      "src": "assets/img/apple-touch-icon.png",
-      "type": "image/png"
+      "src": "/assets/img/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "name": "Michael Broley",
-  "short_name": "MB.COM",
-  "start_url": "/index.html"
+  "start_url": "/index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#ffffff"
 }
