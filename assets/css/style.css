@@ -138,6 +138,11 @@ a:hover {
   outline: 0;
 }
 
+html
+{scroll-behavior: smooth;
+}
+
+
 a:hover {
   text-decoration: underline;
 }
