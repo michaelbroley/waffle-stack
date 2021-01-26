@@ -14585,10 +14585,10 @@ ul.brand-style-2 img:hover {
 
 .brand-separation {
   position: relative;
-  padding-bottom: 217px;
-  margin-bottom: -117px;
-  padding-top: 60px;
-  background: #fff;
+  padding-bottom: 117px;
+  margin-bottom: 0px;
+  padding-top: 117px;
+
 }
 
 @media only screen and (max-width: 767px) {
