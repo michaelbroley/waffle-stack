@@ -15388,13 +15388,13 @@ a.video-popup::before {
 button.video-popup:hover,
 a.video-popup:hover {
   -webkit-transform: scale3d(1.15, 1.15, 1.15);
-  transform: scale3d(1.15, 1.15, 1.15);
+  transform: scale3d(1.15, 1.15, 1.15); 
 }
 
 button.video-popup.position-top-center,
 a.video-popup.position-top-center {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   border: 0 none;
   width: 110px;
