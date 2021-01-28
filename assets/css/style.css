@@ -15395,7 +15395,7 @@ button.video-popup.position-top-center,
 a.video-popup.position-top-center {
   position: absolute;
   top: 84%;
-  left: 50%;
+  left: 84%;
   border: 0 none;
   width: 110px;
   height: 110px;
