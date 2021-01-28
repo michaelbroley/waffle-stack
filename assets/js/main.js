@@ -1,345 +1,191 @@
-/*------------------------------------------------
-Trydo Html5 Creative Ahency Template
-All Main Js Here  
+/**
+* Template Name: MyResume - v2.1.0
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+!(function($) {
+  "use strict";
 
-Index All JS 
------------------------
-        01. Wow Active
-        02. Counter Up
-        03. Feature Icon Activation
-        04. Youtub Popup 
-        05. Slick Activation            
-        06. Paralax Window
-        07. LightBox
-        08. Parallax Activation
-        09. Masonry Activation
-        10. ScrollUp Activation
-        11. Mobile Menu Activation
-        12. Smoth Scroll
---------------------------------------------------*/
-
-
-(function ($) {
-    'use strict';
-
-    /*-------------------- 
-        01. Wow Active 
-    --------------------*/
-
-    new WOW().init();
-
-
-    /*-----------------------
-    	02. Counter Up
-    -------------------------*/
-
-    $('.count').counterUp({
-        delay: 10,
-        time: 1000
-    });
-
-
-    /*----------------------------------
-        03. Feature Icon Activation  
-    --------------------------------------*/
-
-    feather.replace()
-
-    /*--------------------------- 
-    	04. Youtub Popup 
-    -----------------------------*/
-
-    $('.play__btn').yu2fvl();
-
-    /*--------------------------
-        05. Slick Activation 
-    ----------------------------*/
-
-    function slickactivation() {
-        // Check if element exists
-        $.fn.elExists = function () {
-            return this.length > 0;
-        };
-        // Variables
-        var $html = $('html'),
-            $elementCarousel = $('.rn-slick-activation');
-        if ($elementCarousel.elExists()) {
-            var slickInstances = [];
-            $elementCarousel.each(function (index, element) {
-                var $this = $(this);
-                // Carousel Options
-                var $options = typeof $this.data('slick-options') !== 'undefined' ? $this.data('slick-options') : '';
-                var $spaceBetween = $options.spaceBetween ? parseInt($options.spaceBetween) : 0,
-                    $spaceBetween_xl = $options.spaceBetween_xl ? parseInt($options.spaceBetween_xl) : 0,
-                    $isCustomArrow = $options.isCustomArrow ? $options.isCustomArrow : false,
-                    $customPrev = $isCustomArrow === true ? ($options.customPrev ? $options.customPrev : '') : '',
-                    $customNext = $isCustomArrow === true ? ($options.customNext ? $options.customNext : '') : '',
-                    $vertical = $options.vertical ? $options.vertical : false,
-                    $focusOnSelect = $options.focusOnSelect ? $options.focusOnSelect : false,
-                    $asNavFor = $options.asNavFor ? $options.asNavFor : '',
-                    $fade = $options.fade ? $options.fade : false,
-                    $autoplay = $options.autoplay ? $options.autoplay : false,
-                    $autoplaySpeed = $options.autoplaySpeed ? $options.autoplaySpeed : 5000,
-                    $swipe = $options.swipe ? $options.swipe : false,
-                    $adaptiveHeight = $options.adaptiveHeight ? $options.adaptiveHeight : false,
-
-                    $arrows = $options.arrows ? $options.arrows : false,
-                    $dots = $options.dots ? $options.dots : false,
-                    $infinite = $options.infinite ? $options.infinite : false,
-                    $centerMode = $options.centerMode ? $options.centerMode : false,
-                    $centerPadding = $options.centerPadding ? $options.centerPadding : '',
-                    $speed = $options.speed ? parseInt($options.speed) : 1000,
-                    $prevArrow = $arrows === true ? ($options.prevArrow ? '<span class="' + $options.prevArrow.buttonClass + '"><i class="' + $options.prevArrow.iconClass + '"></i></span>' : '<button class="slick-prev">previous</span>') : '',
-                    $nextArrow = $arrows === true ? ($options.nextArrow ? '<span class="' + $options.nextArrow.buttonClass + '"><i class="' + $options.nextArrow.iconClass + '"></i></span>' : '<button class="slick-next">next</span>') : '',
-                    $slidesToShow = $options.slidesToShow ? parseInt($options.slidesToShow, 10) : 1,
-                    $slidesToScroll = $options.slidesToScroll ? parseInt($options.slidesToScroll, 10) : 1;
-
-                /*Responsive Variable, Array & Loops*/
-                var $responsiveSetting = typeof $this.data('slick-responsive') !== 'undefined' ? $this.data('slick-responsive') : '',
-                    $responsiveSettingLength = $responsiveSetting.length,
-                    $responsiveArray = [];
-                for (var i = 0; i < $responsiveSettingLength; i++) {
-                    $responsiveArray[i] = $responsiveSetting[i];
-
-                }
-
-                // Adding Class to instances
-                $this.addClass('slick-carousel-' + index);
-                $this.parent().find('.slick-dots').addClass('dots-' + index);
-                $this.parent().find('.slick-btn').addClass('btn-' + index);
-
-                if ($spaceBetween != 0) {
-                    $this.addClass('slick-gutter-' + $spaceBetween);
-                }
-                if ($spaceBetween_xl != 0) {
-                    $this.addClass('slick-gutter-xl-' + $spaceBetween_xl);
-                }
-                $this.slick({
-                    slidesToShow: $slidesToShow,
-                    slidesToScroll: $slidesToScroll,
-                    asNavFor: $asNavFor,
-                    autoplay: $autoplay,
-                    autoplaySpeed: $autoplaySpeed,
-                    speed: $speed,
-                    infinite: $infinite,
-                    arrows: $arrows,
-                    dots: $dots,
-                    vertical: $vertical,
-                    focusOnSelect: $focusOnSelect,
-                    centerMode: $centerMode,
-                    centerPadding: $centerPadding,
-                    fade: $fade,
-                    adaptiveHeight: $adaptiveHeight,
-                    prevArrow: $prevArrow,
-                    nextArrow: $nextArrow,
-                    responsive: $responsiveArray,
-                });
-
-                if ($isCustomArrow === true) {
-                    $($customPrev).on('click', function () {
-                        $this.slick('slickPrev');
-                    });
-                    $($customNext).on('click', function () {
-                        $this.slick('slickNext');
-                    });
-                }
-            });
-
-            // Updating the sliders in tab
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                $elementCarousel.slick('setPosition');
-            });
-        }
-    }
-    slickactivation()
-
-
-    /*--------------------------
-        06. Paralax Window  
-    --------------------------*/
-
-    $('.parallax-window').parallax({
-        naturalWidth: 600,
-        naturalHeight: 400
-    });
-
-    /* -------------------------
-    	07. LightBox
-    ----------------------------*/
-
-    lightGallery(document.getElementById('animated-thumbnials'), {
-        thumbnail: true,
-        animateThumb: false,
-        showThumbByDefault: false
-    });
-
-    /*--------------------------------
-        08. Parallax Activation
-    ---------------------------------*/
-
-    function stellarParallax() {
-        if ($(window).width() > 1024) {
-            $.stellar();
-        } else {
-            $.stellar('destroy');
-            $('.parallax').css('background-position', '');
-        }
-    }
-
-    function SetResizeContent() {
-        stellarParallax();
-    }
-    SetResizeContent();
-
-
-    /*--------------------------------
-        09. Masonry Activation
-    ---------------------------------*/
-    $('.rn-masonary-wrapper').imagesLoaded(function () {
-        // filter items on button click
-        $('.messonry-button').on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({
-                filter: filterValue
-            });
-        });
-        // init Isotope
-        var $grid = $('.mesonry-list').isotope({
-            itemSelector: '.masonry_item',
-            percentPosition: true,
-            transitionDuration: '0.7s',
-            layoutMode: 'fitRows',
-            masonry: {
-                // use outer width of grid-sizer for columnWidth
-                columnWidth: 1,
-            }
-        });
-    });
-    $('.messonry-button button').on('click', function (event) {
-        $(this).siblings('.is-checked').removeClass('is-checked');
-        $(this).addClass('is-checked');
-        event.preventDefault();
-    });
-
-    /*--------------------------------
-        10. ScrollUp Activation
-    ---------------------------------*/
-
-    $.scrollUp({
-        scrollText: '<i class="fa fa-angle-up"></i>',
-        easingType: 'linear',
-        scrollSpeed: 900,
-        animation: 'slide'
-    });
-
-
-    
-    /*--------------------------------
-        11. Mobile Menu Activation
-    ---------------------------------*/
-
-    function mobileMenuActive() {
-        $('.humberger-menu').on('click', function (e) {
-            e.preventDefault();
-            $('.header-wrapper').addClass('menu-open');
-            $('html').css({
-                overflow: "hidden"
-            })
-        })
-        $('.close-menu').on('click', function (e) {
-            e.preventDefault();
-            $('.header-wrapper').removeClass('menu-open');
-            $('.has-droupdown > a').removeClass('open').siblings('.submenu').removeClass('active');
-            $('html').css({
-                overflow: ""
-            })
-        })
-        $('.has-droupdown > a').on('click', function (e) {
-            e.preventDefault();
-            $(this).siblings('.submenu').toggleClass('active');
-            $(this).toggleClass('open')
-        })
-    }
-    mobileMenuActive()
-
-
-    /*--------------------------------
-        12. Smoth Scroll
-    ---------------------------------*/
-
-    $(document).on('click', '.smoth-animation', function (event) {
-        event.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-    });
-
-
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 250) {
-            $('.header--sticky').addClass('sticky')
-        }else{
-            $('.header--sticky').removeClass('sticky')
-        }
-    })
-
-
-
-/*-------------------------------------------------------------
-  Contact Form Activation
----------------------------------------------------------------*/ 
-
-$(function() {
-
-    // Get the form.
-    var form = $('#contact-form-active');
-  
-    // Get the messages div.
-    var formMessages = $('.form-messege-active');
-  
-    // Set up an event listener for the contact form.
-    $(form).submit(function(e) {
-      // Stop the browser from submitting the form.
-      e.preventDefault();
-  
-      // Serialize the form data.
-      var formData = $(form).serialize();
-  
-      // Submit the form using AJAX.
-      $.ajax({
-        type: 'POST',
-        url: $(form).attr('action'),
-        data: formData
-      })
-      .done(function(response) {
-        // Make sure that the formMessages div has the 'success' class.
-        $(formMessages).removeClass('error');
-        $(formMessages).addClass('success');
-  
-        // Set the message text.
-        $(formMessages).text(response);
-  
-        // Clear the form.
-        $('#contact-form input,#contact-form textarea').val('');
-      })
-      .fail(function(data) {
-        // Make sure that the formMessages div has the 'error' class.
-        $(formMessages).removeClass('success');
-        $(formMessages).addClass('error');
-  
-        // Set the message text.
-        if (data.responseText !== '') {
-          $(formMessages).text(data.responseText);
-        } else {
-          $(formMessages).text('Oops! An error occured and your message could not be sent.');
-        }
+  // Preloader
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function() {
+        $(this).remove();
       });
-    });
-  
+    }
   });
-  
 
+  // Hero typed
+  if ($('.typed').length) {
+    var typed_strings = $(".typed").data('typed-items');
+    typed_strings = typed_strings.split(',')
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
 
+  // Smooth scroll for the navigation menu and links with .scrollto classes
+  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      if (target.length) {
+        e.preventDefault();
 
-})(jQuery)
+        var scrollto = target.offset().top;
+
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+
+        if ($(this).parents('.nav-menu, .mobile-nav').length) {
+          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+          $(this).closest('li').addClass('active');
+        }
+
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+        }
+        return false;
+      }
+    }
+  });
+
+  // Activate smooth scroll on page load with hash links in the url
+  $(document).ready(function() {
+    if (window.location.hash) {
+      var initial_nav = window.location.hash;
+      if ($(initial_nav).length) {
+        var scrollto = $(initial_nav).offset().top;
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+      }
+    }
+  });
+
+  $(document).on('click', '.mobile-nav-toggle', function(e) {
+    $('body').toggleClass('mobile-nav-active');
+    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+  });
+
+  $(document).click(function(e) {
+    var container = $(".mobile-nav-toggle");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if ($('body').hasClass('mobile-nav-active')) {
+        $('body').removeClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+      }
+    }
+  });
+
+  // Navigation active state on scroll
+  var nav_sections = $('section');
+  var main_nav = $('.nav-menu, #mobile-nav');
+
+  $(window).on('scroll', function() {
+    var cur_pos = $(this).scrollTop() + 300;
+
+    nav_sections.each(function() {
+      var top = $(this).offset().top,
+        bottom = top + $(this).outerHeight();
+
+      if (cur_pos >= top && cur_pos <= bottom) {
+        if (cur_pos <= bottom) {
+          main_nav.find('li').removeClass('active');
+        }
+        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+      }
+      if (cur_pos < 200) {
+        $(".nav-menu ul:first li:first").addClass('active');
+      }
+    });
+  });
+
+  // Back to top button
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+
+  $('.back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
+    return false;
+  });
+
+  // jQuery counterUp
+  $('[data-toggle="counter-up"]').counterUp({
+    delay: 10,
+    time: 1000
+  });
+
+  // Skills section
+  $('.skills-content').waypoint(function() {
+    $('.progress .progress-bar').each(function() {
+      $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    });
+  }, {
+    offset: '80%'
+  });
+
+  // Init AOS
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }
+
+  // Porfolio isotope and filter
+  $(window).on('load', function() {
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item'
+    });
+
+    $('#portfolio-flters li').on('click', function() {
+      $("#portfolio-flters li").removeClass('filter-active');
+      $(this).addClass('filter-active');
+
+      portfolioIsotope.isotope({
+        filter: $(this).data('filter')
+      });
+      aos_init();
+    });
+
+    // Initiate venobox (lightbox feature used in portofilo)
+    $('.venobox').venobox({
+      'share': false
+    });
+
+    // Initiate aos_init() function
+    aos_init();
+
+  });
+
+  // Testimonials carousel (uses the Owl Carousel library)
+  $(".testimonials-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    items: 1
+  });
+
+  // Portfolio details carousel
+  $(".portfolio-details-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    items: 1
+  });
+
+})(jQuery);
