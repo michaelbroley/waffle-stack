@@ -11514,6 +11514,41 @@ Footer Style Two
   background-image: url(../images/portfolio/portfolio-9.jpg);
 }
 
+
+.portfolio .bg-blr-image.image-10 {
+  background-image: url(../images/portfolio/portfolio-10.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-11 {
+  background-image: url(../images/portfolio/portfolio-11.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-12 {
+  background-image: url(../images/portfolio/portfolio-12.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-13 {
+  background-image: url(../images/portfolio/portfolio-13.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-14 {
+  background-image: url(../images/portfolio/portfolio-14.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-15 {
+  background-image: url(../images/portfolio/portfolio-15.jpg);
+}
+
+
+.portfolio .bg-blr-image.image-16 {
+  background-image: url(../images/portfolio/portfolio-16.jpg);
+}
+
 .portfolio .content {
   position: absolute;
   bottom: 40px;
